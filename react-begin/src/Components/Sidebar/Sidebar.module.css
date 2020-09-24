@@ -1,0 +1,16 @@
+.nav {
+    grid-area: n;
+    background-color: rgb(34, 139, 139);
+    width: 250px;
+}
+
+.item a {
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    padding: 20px;
+}
+
+.item a.activeLink {
+    color: rebeccapurple;
+}
