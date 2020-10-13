@@ -3,13 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import state from './state/state'
 import { addPost } from './state/state'
 
 
 
 
-export let renderAllTree = () => {
+export let renderAllTree = (state) => {
 ReactDOM.render(
   <React.StrictMode>
     <App state={state} addPost={addPost}/>

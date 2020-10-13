@@ -70,13 +70,14 @@ let state = {
 }
 
 export let addPost = (newMessage) => {
+    debugger
     let newPost = {
         id: 5,
         message: newMessage,
         like: 0,
     };
     state.profilePage.postData.push(newPost);
-    renderAllTree();
+    renderAllTree(state);
 }
 
 

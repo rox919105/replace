@@ -4,5 +4,5 @@ import state from './state/state';
 
 
 
-renderAllTree(state)
+renderAllTree(state);
 
