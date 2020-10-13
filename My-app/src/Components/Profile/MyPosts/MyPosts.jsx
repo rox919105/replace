@@ -10,10 +10,11 @@ const MyPosts = (props) => {
     let message = React.createRef();
 
   let addPost = () =>{
-    debugger
+  
  
         let add = message.current.value;
         props.addPost(add);
+        message.current.value = '';
     } 
 
     return (

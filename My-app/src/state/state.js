@@ -1,3 +1,5 @@
+import {renderAllTree} from '../render'
+
 let state = {
 
     profilePage : {
@@ -73,7 +75,8 @@ export let addPost = (newMessage) => {
         message: newMessage,
         like: 0,
     };
-    state.profilePage.postData.push(newPost);        
+    state.profilePage.postData.push(newPost);
+    renderAllTree();
 }
 
 
