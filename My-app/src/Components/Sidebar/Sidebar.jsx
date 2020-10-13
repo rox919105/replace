@@ -20,6 +20,9 @@ const Sidebar = () => {
             <div className={s.item}>
                 <NavLink to='/Settings' activeClassName={s.activeLink}>Settings</NavLink>
             </div>
+            <div className={s.item}>
+                <NavLink to='/Test' activeClassName={s.activeLink}>Test</NavLink>
+            </div>
         </nav>
     )
 }

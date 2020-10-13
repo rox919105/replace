@@ -1,0 +1,13 @@
+.item {
+    color: royalblue;
+    font-size: 18;
+}
+
+.item img {
+    width: 40px;
+}
+
+.item .likes {
+    color: pink;
+    border-bottom: 1px solid rgb(73, 73, 73);
+}

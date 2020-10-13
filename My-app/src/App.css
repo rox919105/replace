@@ -1,6 +1,7 @@
 .app-wrapper {
+    height: 100vh;
+    width: 97vw;
     display: grid;
-    width: 1350px;
     margin: 0 auto;
 
     grid-template-areas:
@@ -13,7 +14,7 @@
 
 .app-wrapper-content {
     grid-area: c;
-    background-color: brown;
+    background-color: rgba(29, 0, 156, 0.521);
     }
 
 

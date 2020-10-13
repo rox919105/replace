@@ -1,0 +1,17 @@
+.person {
+    padding: 20px;
+    font-size: 25px;
+    margin: 15px;
+}
+
+
+.person a.activeLink {
+    color: rgb(13, 13, 224);
+    border-radius: 2px;
+    box-shadow: 1px 5px 5px royalblue;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(250, 241, 241);
+}

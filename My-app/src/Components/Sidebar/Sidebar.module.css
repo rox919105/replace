@@ -1,0 +1,21 @@
+.nav {
+    grid-area: n;
+    background-image: url('https://demos.creative-tim.com/light-bootstrap-dashboard-angular2/assets/img/sidebar-5.jpg');
+    width: 100%;
+}
+
+.item a {
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    margin: 15px;
+    
+}
+
+.item a.activeLink {
+    color: rgb(157, 6, 245);
+    border: none;
+    border-radius: 7px;
+    box-shadow: 1px 8px 5px 1px rgb(106, 70, 190);
+    padding: 2px;
+}

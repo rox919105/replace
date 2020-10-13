@@ -1,0 +1,21 @@
+.parent {
+    display: grid;   
+    grid-template-columns: 1fr 3fr 1fr;
+    margin: 22px;
+}
+
+
+.a {
+    font-size: 30px;
+    color: rgb(163, 11, 11);
+    text-decoration:none;
+
+
+}
+
+.b {
+
+    color: rgb(212, 219, 215);
+    font-size: 30px;
+    text-align: center;
+}

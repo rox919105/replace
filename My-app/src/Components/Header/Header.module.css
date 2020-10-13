@@ -1,0 +1,11 @@
+.header{
+    grid-area: h;
+    background-image: url('https://img.pngio.com/horror-forest-background-for-photoshop-nature-grass-and-foliage-dark-scary-forest-png-800_600.jpg');
+    
+
+}
+
+.header img {
+    width: 50px;
+    height: 50px;
+}

@@ -1,0 +1,8 @@
+a.activeLink {
+    color: rgb(55, 55, 139);
+    border-radius: 5px;
+    box-shadow: 1px 15px 5px rgb(105, 49, 101);
+}
+.a{
+    margin: 20px;
+}
