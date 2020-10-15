@@ -9,9 +9,9 @@ let state = {
             {id: 3, message: 'left', like: 28},
             {id: 4, message: 'all', like: 20},
             {id: 5, message: 'no', like: 11},
-          ],
-          
-       
+        ],
+
+        newPostText : 'All Right',  
     },
     
     dialogsPage : {
@@ -24,8 +24,6 @@ let state = {
             { id: 6, name: 'Pukan' },
             { id: 7, name: 'Pukach' },
             { id: 8, name: 'Puk' },
-            { id: 9, name: 'Pukann' },
-            { id: 10, name: 'Puka' },
         ],
 
         messageData : [
@@ -38,6 +36,7 @@ let state = {
             { message: 'HHHHHHHHHHV' },
             { message: 'HTRTRRRRRRRRRRRD' }
         ],
+        newMessageText : '',
     },
       
 
@@ -63,20 +62,42 @@ let state = {
             {id: 7, adress: 'М. Житомир. вул Котовського 93 - ', tel: 308951254}
           ],
     },
-
-
-   
-     
+  
 }
 
-export let addPost = (newMessage) => {
+window.state = state;
+
+export let addOneNew = () =>{
     debugger
+    let newOne = {
+        id: 9,
+        name: state.dialogsPage.newMessageText,
+    }
+    state.dialogsPage.personsData.push(newOne);
+    renderAllTree(state);
+}
+export let updatedNewOne = (newName) =>{
+    
+    state.dialogsPage.newMessageText = newName;
+    renderAllTree(state);
+}
+
+
+export let addPost = () => {
+
     let newPost = {
         id: 5,
-        message: newMessage,
+        message: state.profilePage.newPostText,
         like: 0,
     };
     state.profilePage.postData.push(newPost);
+    state.profilePage.newPostText = '';
+    renderAllTree(state);
+}
+
+export let updateNewPostText = (newText) => {
+
+    state.profilePage.newPostText = newText;
     renderAllTree(state);
 }
 

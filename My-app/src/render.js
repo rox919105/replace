@@ -3,15 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { addPost } from './state/state'
-
+import { addOneNew, addPost, updatedNewOne, updateNewPostText } from './state/state'
 
 
 
 export let renderAllTree = (state) => {
 ReactDOM.render(
   <React.StrictMode>
-    <App state={state} addPost={addPost}/>
+      <App state={state} addPost={addPost} updateNewPostText={updateNewPostText}
+       addOneNew={addOneNew} updatedNewOne={updatedNewOne}/>
   </React.StrictMode>,
   document.getElementById('root')
 );

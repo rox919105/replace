@@ -1,15 +1,13 @@
 import React from 'react';
 import s from './Dialogs.module.css';
-import { NavLink } from 'react-router-dom';
 import Person from './DialogsComponents/Person'
 import Dialog from './DialogsComponents/Dialog'
-import { findAllInRenderedTree } from 'react-dom/test-utils';
 
 
 
 const Dialogs = (props) => {
 
-  
+ debugger
     let personsElements =
      props.state.personsData.map( p => <Person name={p.name} id={p.id} />)
 
@@ -19,8 +17,14 @@ const Dialogs = (props) => {
     let textAdd = React.createRef();
 
     let newMessage = () =>{
-        let add = textAdd.current.value;
-        alert(add);
+        props.addOneNew();
+        textAdd.current.value = '';
+
+    }
+    let onMessageChange = () =>{
+        let text = textAdd.current.value;
+        props.updatedNewOne(text)
+    
     }
      
     return (
@@ -31,7 +35,7 @@ const Dialogs = (props) => {
             <div className={s.messages}>
                 {dialogElements}
             </div>
-            <textarea ref={textAdd} /> 
+            <textarea ref={textAdd} onChange={onMessageChange} value={props.newMessageText} /> 
             <button onClick={newMessage}>add</button>
         </div >
     )
