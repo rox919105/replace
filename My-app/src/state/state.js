@@ -36,7 +36,7 @@ let state = {
             { message: 'HHHHHHHHHHV' },
             { message: 'HTRTRRRRRRRRRRRD' }
         ],
-        newMessageText : '',
+        newMessageText : 'gch',
     },
       
 
@@ -72,19 +72,19 @@ export let addOneNew = () =>{
     let newOne = {
         id: 9,
         name: state.dialogsPage.newMessageText,
-    }
+    };
     state.dialogsPage.personsData.push(newOne);
+    state.dialogsPage.newMessageText = '';
     renderAllTree(state);
 }
 export let updatedNewOne = (newName) =>{
-    
     state.dialogsPage.newMessageText = newName;
     renderAllTree(state);
 }
 
 
 export let addPost = () => {
-
+debugger
     let newPost = {
         id: 5,
         message: state.profilePage.newPostText,

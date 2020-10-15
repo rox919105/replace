@@ -7,7 +7,7 @@ import Dialog from './DialogsComponents/Dialog'
 
 const Dialogs = (props) => {
 
- debugger
+ 
     let personsElements =
      props.state.personsData.map( p => <Person name={p.name} id={p.id} />)
 
@@ -19,12 +19,11 @@ const Dialogs = (props) => {
     let newMessage = () =>{
         props.addOneNew();
         textAdd.current.value = '';
-
     }
     let onMessageChange = () =>{
         let text = textAdd.current.value;
-        props.updatedNewOne(text)
-    
+        props.updatedNewOne(text);
+
     }
      
     return (
