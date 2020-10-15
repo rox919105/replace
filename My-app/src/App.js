@@ -15,7 +15,6 @@ import Test from './Components/Test/Test';
 
 const App = (props) => {
 
-debugger
 
   return (
     <BrowserRouter>
