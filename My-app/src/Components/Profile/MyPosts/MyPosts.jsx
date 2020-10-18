@@ -10,6 +10,7 @@ const MyPosts = (props) => {
     let message = React.createRef();
 
     let addPost = () =>{
+        debugger
         props.addPost();
     }
 
