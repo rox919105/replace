@@ -22,16 +22,15 @@ const App = (props) => {
         <Header />
         <Sidebar />
         <div className='app-wrapper-content'>
-          <Route path='/Profile' render= { () => <Profile
+          <Route path='/Profile' render={() => <Profile
             profilePage={props.state.profilePage}
-            addPost={props.addPost}
-            updateNewPostText={props.updateNewPostText} />}  />
-          <Route path='/Dialogs'render= { () => <Dialogs 
-            state={props.state.dialogsPage}/>} />
-          <Route path='/News' render= { () => <News />} />
-          <Route path='/Music' render= { () => <Music />} />
-          <Route path='/Settings' render= { () => <Settings />} />
-          <Route path='/Test' render= { () => <Test state={props.state.testPage}/>} />
+            dispatch={props.dispatch} />} />
+          <Route path='/Dialogs' render={() => <Dialogs
+            state={props.state.dialogsPage} />} />
+          <Route path='/News' render={() => <News />} />
+          <Route path='/Music' render={() => <Music />} />
+          <Route path='/Settings' render={() => <Settings />} />
+          <Route path='/Test' render={() => <Test state={props.state.testPage} />} />
         </div>
       </div>
     </BrowserRouter>
