@@ -1,6 +1,11 @@
 const ADD_POST = 'ADD-POST'
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
 
+
+const ADD_NEW_MESSAGE = 'ADD_NEW_MESSAGE'
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE_NEW_MESSAGE_BODY'
+
+
 let store = {
     _state: {
 
@@ -38,6 +43,7 @@ let store = {
                 { message: 'HHHHHHHHHHV' },
                 { message: 'HTRTRRRRRRRRRRRD' }
             ],
+            newMessageBody: 'newMessageBody',
         },
 
 
@@ -102,6 +108,20 @@ let store = {
             this._state.profilePage.newPostText = action.newText;
             this._callSubscriber(this._state);
         }
+        else if (action.type === ADD_NEW_MESSAGE) {
+            let newMessage = {
+                message: this._state.dialogsPage.newMessageBody
+            };
+            this._state.dialogsPage.messageData.push(newMessage);
+            this._state.dialogsPage.newMessageBody = '';
+            this._callSubscriber(this._state);
+        }
+        else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+            this._state.dialogsPage.newMessageBody = action.newMessage;
+            this._callSubscriber(this._state);
+        }
+        
+        
     },
 
     subscribe(observer) {
@@ -111,13 +131,23 @@ let store = {
 
 export const addPostActionCreator = () => {
     return{
-       
         type: ADD_POST
     }
 }
 export const updateNewPostTextActionCreator = (text) => {
     return{
         type: UPDATE_NEW_POST_TEXT , newText: text
+    }
+}
+
+export const addNewMessageCreator = () => {
+    return{
+        type: ADD_NEW_MESSAGE
+    }
+}
+export const updateNewMessageBodyCreator = (body) => {
+    return{
+        type: UPDATE_NEW_MESSAGE_BODY , newMessage: body
     }
 }
 
