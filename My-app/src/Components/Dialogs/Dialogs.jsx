@@ -2,7 +2,7 @@ import React from 'react';
 import s from './Dialogs.module.css';
 import Person from './DialogsComponents/Person'
 import Dialog from './DialogsComponents/Dialog'
-import {addNewMessageCreator, updateNewMessageBodyCreator} from '../../state/state'
+import {addNewMessageCreator, updateNewMessageBodyCreator} from '../../state/dialogsReducer'
 
 
 const Dialogs = (props) => {
