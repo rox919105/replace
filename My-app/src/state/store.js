@@ -40,7 +40,7 @@ let store = {
                 { message: 'HHHHHHHHHHV' },
                 { message: 'HTRTRRRRRRRRRRRD' }
             ],
-            newMessageBody: '',
+            newMessageBody: 'Add Message',
         },
 
 

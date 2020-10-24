@@ -1,4 +1,4 @@
-import store from './state/state';
+import store from './state/reduxSrote';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -19,7 +19,10 @@ export let renderAllTree = (state) => {
 
 renderAllTree(store.getState());
 
-store.subscribe(renderAllTree);
+store.subscribe ( () =>{
+  let state = store.getState()
+  renderAllTree(state)
+});
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA

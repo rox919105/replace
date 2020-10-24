@@ -16,7 +16,7 @@ const Dialogs = (props) => {
         state.messageData.map( m => <Dialog message={m.message} />);
 
     let onMessageChange = (event) =>{
-        debugger
+
         let body = event.target.value;
         props.store.dispatch(updateNewMessageBodyCreator(body));
     }
