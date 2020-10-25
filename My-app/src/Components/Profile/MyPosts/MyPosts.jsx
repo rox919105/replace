@@ -1,35 +1,35 @@
 import React from 'react';
 import s from './MyPosts.module.css';
 import Post from './Post/Post';
-import {addPostActionCreator, updateNewPostTextActionCreator} from '../../../state/profileReducer'
+
+
+
 const MyPosts = (props) => {
 
-    let Posts =
-        props.profilePage.map(p => <Post message={p.message} like={p.like} />);
+    let PostElements =
+        props.posts.map(p => <Post message={p.message} like={p.like} />);
 
-    let message = React.createRef();
+    let onPostChange = (e) => {
+        let text = e.target.value;
+        props.updateNewPostText(text);
+    }    
 
-    let addPost = () => {
-        debugger
-        props.dispatch(addPostActionCreator());
+    let onAddPost = () => {
+        props.addPost();
     }
 
-    let onPostChange = () => {
-        let text = message.current.value;
-        props.dispatch(updateNewPostTextActionCreator(text));
-    }
 
-   
-
+    
     return (
         <div className={s.text}>
             <div>
-                <textarea ref={message} onChange={onPostChange} value={props.newPostText} />
+                <textarea onChange={onPostChange}
+                        value={props.newPostText} />
             </div>
             <div className={s.button}>
-                <button onClick={addPost}>Add post</button>
+                <button onClick={onAddPost}>Add post</button>
             </div>
-            {Posts}
+            {PostElements}
         </div >
     )
 }

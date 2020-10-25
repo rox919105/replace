@@ -9,6 +9,7 @@ import Music from './Components/Music/Music';
 import Settings from './Components/Settings/Settings';
 import { BrowserRouter, Route, } from 'react-router-dom';
 import Test from './Components/Test/Test';
+import DialogsContainer from './Components/Dialogs/DialogsContainer';
 
 
 
@@ -22,11 +23,8 @@ const App = (props) => {
         <Header />
         <Sidebar />
         <div className='app-wrapper-content'>
-          <Route path='/Profile' render={() => <Profile
-            profilePage={props.state.profilePage}
-            dispatch={props.dispatch} />} />
-          <Route path='/Dialogs' render={() => <Dialogs
-            store={props.store} />} />
+          <Route path='/Profile' render={() => <Profile store={props.store} />} />
+          <Route path='/Dialogs' render={() => <DialogsContainer store={props.store} />} />
           <Route path='/News' render={() => <News />} />
           <Route path='/Music' render={() => <Music />} />
           <Route path='/Settings' render={() => <Settings />} />

@@ -7,7 +7,7 @@ import { createRef } from 'react';
 
 
 let Test = (props) =>{
-
+debugger
     let Omno = props.state.Struct.map( n =><Structure name={n.name} id={n.id} />);
 
     let Find = props.state.Contacts.map( a =><Adress adress={a.adress} tel={a.tel} /> );
