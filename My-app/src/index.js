@@ -1,17 +1,19 @@
-import store from './state/reduxSrote';
+import store from './state/reduxStore';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { Provider } from 'react-redux';
 
 
 
 export let renderAllTree = (state) => {
   ReactDOM.render(
     <React.StrictMode>
-      <App state={store.getState()} dispatch={store.dispatch.bind(store)} 
-      store={store} />
+      <Provider store={store}>
+      <App  />
+      </Provider>
     </React.StrictMode>,
     document.getElementById('root')
   );

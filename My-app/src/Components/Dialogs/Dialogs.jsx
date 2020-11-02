@@ -6,7 +6,7 @@ import Dialog from './DialogsComponents/Dialog'
 
 
 const Dialogs = (props) => {
-debugger
+
     let personsElements =
         props.personsData.map( p => <Person name={p.name} id={p.id} />)
 
@@ -21,7 +21,6 @@ debugger
     let onAddMessage = () =>{
         props.AddMessage();
     }
-
 
     return (
         <div className={s.dialogs}>

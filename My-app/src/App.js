@@ -3,7 +3,6 @@ import './App.css';
 import Header from './Components/Header/Header';
 import Sidebar from './Components/Sidebar/Sidebar';
 import Profile from './Components/Profile/Profile';
-import Dialogs from './Components/Dialogs/Dialogs';
 import News from './Components/News/News';
 import Music from './Components/Music/Music';
 import Settings from './Components/Settings/Settings';
@@ -23,12 +22,12 @@ const App = (props) => {
         <Header />
         <Sidebar />
         <div className='app-wrapper-content'>
-          <Route path='/Profile' render={() => <Profile store={props.store} />} />
-          <Route path='/Dialogs' render={() => <DialogsContainer store={props.store} />} />
+          <Route path='/Profile' render={() => <Profile  />} />
+          <Route path='/Dialogs' render={() => <DialogsContainer  />} />
           <Route path='/News' render={() => <News />} />
           <Route path='/Music' render={() => <Music />} />
           <Route path='/Settings' render={() => <Settings />} />
-          <Route path='/Test' render={() => <Test state={props.state.testPage} />} />
+          <Route path='/Test' render={() => <Test  />} />
         </div>
       </div>
     </BrowserRouter>

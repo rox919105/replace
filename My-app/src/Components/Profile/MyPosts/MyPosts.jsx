@@ -18,7 +18,7 @@ const MyPosts = (props) => {
         props.addPost();
     }
 
-
+    
     
     return (
         <div className={s.text}>
