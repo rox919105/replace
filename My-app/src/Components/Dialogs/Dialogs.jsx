@@ -8,10 +8,10 @@ import Dialog from './DialogsComponents/Dialog'
 const Dialogs = (props) => {
 
     let personsElements =
-        props.personsData.map( p => <Person name={p.name} id={p.id} />)
+        props.personsData.map( p => <Person name={p.name} id={p.id} key={p.id} />)
 
     let dialogElements =
-        props.messageData.map( m => <Dialog message={m.message} />);
+        props.messageData.map( m => <Dialog message={m.message} key={m.id} />);
 
     let onMessageChange = (event) =>{
         let body = event.target.value;

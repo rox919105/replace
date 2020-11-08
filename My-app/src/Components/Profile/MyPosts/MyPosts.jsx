@@ -7,7 +7,7 @@ import Post from './Post/Post';
 const MyPosts = (props) => {
 
     let PostElements =
-        props.posts.map(p => <Post message={p.message} like={p.like} />);
+        props.posts.map(p => <Post message={p.message} like={p.like} key={p.id} />);
 
     let onPostChange = (e) => {
         let text = e.target.value;
