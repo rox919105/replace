@@ -4,7 +4,6 @@ import s from './Test.module.css';
 import Structure from './TestComponenets/Structure';
 import Adress from './TestComponenets/Adress';
 //import { createRef } from 'react';
-https://s.smutty.com/media_smutty_2/r/a/m/w/b/ramworld-jy4dm-dab353
 
 
 let Test = (props) =>{
