@@ -3,7 +3,8 @@ import s from './Test.module.css';
 //import { NavLink } from 'react-router-dom';
 import Structure from './TestComponenets/Structure';
 import Adress from './TestComponenets/Adress';
-//import { createRef } from 'react';
+
+
 
 
 let Test = (props) =>{

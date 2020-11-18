@@ -4,6 +4,7 @@ import Users from './Users'
 
 
 const mapStateToProps = (state) => {
+    debugger
     return {
         users: state.usersPage.users
     }

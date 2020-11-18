@@ -1,4 +1,13 @@
-div{
+.item{
     color:white;
     padding: 10px;
+    background-color: teal;
+}
+.userIcon {
+    width: 100px;
+}
+
+.button {
+    margin: 1%;
+
 }
