@@ -40,7 +40,7 @@ let Test = (props) =>{
     let addPost = () =>{
         alert('s');
     }
-
+    
     return (
 
         <div className={s.parent}>

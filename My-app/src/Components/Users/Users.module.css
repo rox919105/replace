@@ -11,3 +11,10 @@
     margin: 1%;
 
 }
+
+.selectedPage {
+    font-size: 18px;
+    font-weight: bold;
+    color:red;
+    background-color: rgb(123, 13, 167);
+}
