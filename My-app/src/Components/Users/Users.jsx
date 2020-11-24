@@ -1,6 +1,7 @@
 import React from 'react'
 import s from './Users.module.css'
 import userIcon from '../../assets/images/userIcon.png'
+import { NavLink } from 'react-router-dom';
 
 
 let Users = (props) =>{
@@ -10,8 +11,6 @@ let Users = (props) =>{
         for (let i = 1; i <= pagesCount; i++) {
             pages.push(i)
         }
-        console.log(props.currentPage, 'hi')
-
 
         return (
             <div className={s.item}>
@@ -21,11 +20,14 @@ let Users = (props) =>{
                             onClick={ () => {props.onChangePage(p)} } key={p}>{p}</button>
                     })}
                 </div>
-
+                
                 {props.users.map(u => <div key={u.id}>
-                    <div><img className={s.userIcon}
+                    <div>
+                        <NavLink to='/Profile'><img className={s.userIcon}
                         src={u.photos.small != null ? u.photos.small : userIcon}
-                        alt='user' /></div>
+                        alt='user' />
+                        </NavLink>
+                    </div>
 
                     <div>name: {u.name}</div>
                     <div>{u.status}</div>
