@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import Header from './Components/Header/Header';
 import Sidebar from './Components/Sidebar/Sidebar';
-import Profile from './Components/Profile/Profile';
 import News from './Components/News/News';
 import Music from './Components/Music/Music';
 import Settings from './Components/Settings/Settings';
@@ -24,7 +23,7 @@ const App = (props) => {
         <Header />
         <Sidebar />
         <div className='app-wrapper-content'>
-          <Route path='/Profile' render={() => <ProfileContainer />} />
+          <Route path='/Profile/:userId' render={() => <ProfileContainer />} />
           <Route path='/Dialogs' render={() => <DialogsContainer  />} />
           <Route path='/News' render={() => <News />} />
           <Route path='/Music' render={() => <Music />} />

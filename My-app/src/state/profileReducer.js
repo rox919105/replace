@@ -1,6 +1,6 @@
 const ADD_POST = 'ADD-POST'
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
-const SET_USER_PAGE = 'SET_USER_PAGE'
+const SET_USER_PROFILE = 'SET_USER_PROFILE'
 
 
 let initialState = {
@@ -36,7 +36,7 @@ const profileReduser = (state = initialState, action) => {
             return stateCopy;
         }
 
-        case SET_USER_PAGE:
+        case SET_USER_PROFILE:
             return{
                 ...state, profile: action.profile
             } 
@@ -51,6 +51,6 @@ export const addPostActionCreator = () => ({ type: ADD_POST })
 
 export const updateNewPostTextActionCreator = (text) => ({ type: UPDATE_NEW_POST_TEXT, newText: text })
 
-export const setUserPage = (profile) => ({ type: SET_USER_PAGE, profile })
+export const setUserProfile = (profile) => ({ type: SET_USER_PROFILE, profile })
 
 export default profileReduser;

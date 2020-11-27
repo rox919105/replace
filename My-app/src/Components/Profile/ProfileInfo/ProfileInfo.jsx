@@ -3,7 +3,7 @@ import s from './ProfileInfo.module.css';
 import Preloader from '../../../assets/images/Preloader.gif'
 
 const ProfileInfo = (props) => {
-    debugger
+    
     if (!props.profile)
         return  <img src={Preloader} alt='loading'/>
     return (
