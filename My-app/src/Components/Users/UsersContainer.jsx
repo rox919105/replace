@@ -1,21 +1,29 @@
 import { connect } from 'react-redux'
-import { follow, setCurrentPage, setTotalUsersCount,
-      followSuccess, unfollowSuccess, toggleFollowingProgress,
-      setUsers, unfollow, getUsers } from '../../state/usersReducer';
+import { follow, setCurrentPage, setTotalUsersCount, toggleFollowingProgress , toggleIsFethcing, setUsers, unFollow } from '../../state/usersReducer';
 import Users from './Users'
 import React from 'react'
 import Preloader from '../../assets/images/Preloader.gif'
+import { usersAPI } from '../../Api/Api';
 
 class UsersContainerAPI extends React.Component {
-    
     componentDidMount() {
-        
-        this.props.getUsers(this.props.currentPage, this.props.pageSize) 
+        this.props.toggleIsFethcing(true)
+        usersAPI.getUsers(this.props.currentPage, this.props.pageSize)
+            .then(data => {
+                this.props.setUsers(data.items);
+                this.props.setTotalUsersCount(data.totalCount);
+                this.props.toggleIsFethcing(false)
+            });
     }
-sdasdasdasdasd
+
     onChangePage = (pageNumber) => {
-       
-        this.props.getUsers(pageNumber, this.props.pageSize)
+        this.props.setCurrentPage(pageNumber)
+        this.props.toggleIsFethcing(true)
+        usersAPI.getUsers(pageNumber, this.props.pageSize)
+            .then(data => {
+                this.props.setUsers(data.items);
+                this.props.toggleIsFethcing(false)
+            });
     }
 
     render() {
@@ -26,12 +34,11 @@ sdasdasdasdasd
                 currentPage={this.props.currentPage}
                 onChangePage={this.onChangePage}
                 users={this.props.users}
-                unfollow={this.props.unfollow}
+                unFollow={this.props.unFollow}
                 follow={this.props.follow}
                 followingInProgress={this.props.followingInProgress}
                 toggleFollowingProgress={this.props.toggleFollowingProgress}
-                followSuccess={this.props.unfollowSuccess}
-                unfollowSuccess={this.props.unfollowSuccess}
+
             />
         </>)
     }
@@ -50,23 +57,13 @@ const mapStateToProps = (state) => {
     }
 };
 
-
-const UsersContainer = connect(mapStateToProps, { followSuccess, unfollowSuccess, 
-    follow, toggleFollowingProgress, unfollow, setUsers, setCurrentPage, setTotalUsersCount, getUsers })(UsersContainerAPI);
-export default UsersContainer;
-
-
-
-
-
-
 /* const mapDispatchToProps = (dispatch) => {
     return {
         follow: (userId) => {
             dispatch(followAC(userId))
         },
-        unfollow: (userId) => {
-            dispatch(unfollowAC(userId))
+        unFollow: (userId) => {
+            dispatch(unFollowAC(userId))
         },
         setUsers: (users) => {
             dispatch(setUsersAC(users))
@@ -84,3 +81,7 @@ export default UsersContainer;
 
     }
 }; */
+
+const UsersContainer = connect(mapStateToProps, { follow, unFollow, setUsers,
+     setCurrentPage, setTotalUsersCount, toggleIsFethcing, toggleFollowingProgress })(UsersContainerAPI);
+export default UsersContainer;
