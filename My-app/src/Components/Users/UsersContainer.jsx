@@ -10,10 +10,9 @@ class UsersContainerAPI extends React.Component {
     
     componentDidMount() {
         
-        debugger
         this.props.getUsers(this.props.currentPage, this.props.pageSize) 
     }
-
+sdasdasdasdasd
     onChangePage = (pageNumber) => {
        
         this.props.getUsers(pageNumber, this.props.pageSize)
