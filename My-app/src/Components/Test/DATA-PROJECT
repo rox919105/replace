@@ -24,3 +24,30 @@ const mapDispatchToProps = (dispatch) => {
 
     }
 };
+
+//profileContainer
+
+
+componentDidMount() {
+     
+        let userId = this.props.match.params.userId;
+        if (!userId) {
+            userId = 12933
+        }
+    usersAPI.setProfile(userId)
+        .then(data => {
+           this.props.setUserProfile(data);
+        });
+
+//headerContainer
+
+componentDidMount() {
+usersAPI.setAuth()
+            .then(data => {
+                if (data.resultCode === 0) {
+                    debugger
+                    let {id, email, login} = data.data;
+                    this.props.setAuthUserData(id, email, login)
+                }
+            });
+}
