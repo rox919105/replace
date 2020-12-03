@@ -27,13 +27,6 @@ export const usersAPI = {
             })
     },
 
-    setAuth() {
-        return instance.get(`auth/me`)
-            .then(response => {
-                return response.data
-            })
-    },
-
     follow(userId) {
         return instance.post(`follow/${userId}`)
     },
@@ -41,4 +34,12 @@ export const usersAPI = {
     unfollow(userId) {
         return instance.delete(`follow/${userId}`)
     },
+
+    setAuth() {
+        return instance.get(`auth/me`)
+            .then(response => {
+                return response.data
+            })
+    },
 }
+

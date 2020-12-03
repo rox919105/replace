@@ -3,6 +3,7 @@ import s from './Test.module.css';
 //import { NavLink } from 'react-router-dom';
 import Structure from './TestComponenets/Structure';
 import Adress from './TestComponenets/Adress';
+import { Redirect } from 'react-router-dom';
 
 
 
@@ -40,7 +41,7 @@ let Test = (props) =>{
     let addPost = () =>{
         alert('s');
     }
-    
+    if (!props.isAuth) return <Redirect to='/login' />
     return (
 
         <div className={s.parent}>

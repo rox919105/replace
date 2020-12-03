@@ -10,6 +10,8 @@ import DialogsContainer from './Components/Dialogs/DialogsContainer';
 import UsersContainer from './Components/Users/UsersContainer';
 import ProfileContainer from './Components/Profile/ProfileContainer';
 import HeaderContainer from './Components/Header/HeaderContainer';
+import Login from './Components/Login/Login'
+
 
 
 
@@ -23,13 +25,14 @@ const App = (props) => {
         <HeaderContainer />
         <Sidebar />
         <div className='app-wrapper-content'>
-          <Route path='/Profile/:userId?' render={() => <ProfileContainer />} />
-          <Route path='/Dialogs' render={() => <DialogsContainer  />} />
-          <Route path='/News' render={() => <News />} />
-          <Route path='/Music' render={() => <Music />} />
-          <Route path='/Settings' render={() => <Settings />} />
-          <Route path='/Users' render={() => <UsersContainer  />} />
-          <Route path='/Test' render={() => <Test  />} />
+          <Route path='/profile/:userId?' render={() => <ProfileContainer />} />
+          <Route path='/dialogs' render={() => <DialogsContainer  />} />
+          <Route path='/news' render={() => <News />} />
+          <Route path='/music' render={() => <Music />} />
+          <Route path='/settings' render={() => <Settings />} />
+          <Route path='/users' render={() => <UsersContainer  />} />
+          <Route path='/test' render={() => <Test  />} />
+          <Route path='/login' render={() => <Login  />} />
         </div>
       </div>
     </BrowserRouter>
