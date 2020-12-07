@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import {setUserProfile, SetProfile} from '../../state/profileReducer'
 import Profile from './Profile';
 import { Redirect, withRouter } from 'react-router-dom';
+import { withAuthRedirect } from '../Hoc/withAuthRedirect';
 
 
 
@@ -16,7 +17,8 @@ class ProfileContainer extends React.Component {
         this.props.SetProfile(userId)
     }
     render(){
-        if (!this.props.isAuth) return <Redirect to={'/login'} />
+       /*  if (!this.props.isAuth) return <Redirect to={'/login'} /> */
+       
         
 
         return (
@@ -27,6 +29,7 @@ class ProfileContainer extends React.Component {
    
 }
 
+let AuthRedirectComponent = withAuthRedirect(ProfileContainer)
 
 const mapStateToProps = (state) => {
     
@@ -36,6 +39,6 @@ const mapStateToProps = (state) => {
     }
 }
 
-let withRouterUrl = withRouter(ProfileContainer)
+let withRouterUrl = withRouter(AuthRedirectComponent)
 
 export default connect( mapStateToProps, {setUserProfile, SetProfile})(withRouterUrl)

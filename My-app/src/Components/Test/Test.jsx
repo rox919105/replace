@@ -41,7 +41,7 @@ let Test = (props) =>{
     let addPost = () =>{
         alert('s');
     }
-    if (!props.isAuth) return <Redirect to='/login' />
+    if (!props.isAuth) return <Redirect to={'/login'} />;
     return (
 
         <div className={s.parent}>

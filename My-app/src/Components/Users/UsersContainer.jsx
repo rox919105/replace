@@ -5,9 +5,10 @@ import { follow, setCurrentPage, setTotalUsersCount,
 import Users from './Users'
 import React from 'react'
 import Preloader from '../../assets/images/Preloader.gif'
+import { withAuthRedirect } from '../Hoc/withAuthRedirect';
 
 
-class UsersContainerAPI extends React.Component {
+class UsersContainer extends React.Component {
     componentDidMount() {
         this.props.getUsers(this.props.currentPage, this.props.pageSize)
     }
@@ -32,6 +33,7 @@ class UsersContainerAPI extends React.Component {
     }
 }
 
+let AuthRedirectComponent = withAuthRedirect(UsersContainer)
 
 const mapStateToProps = (state) => {
 
@@ -46,7 +48,6 @@ const mapStateToProps = (state) => {
 };
 
 
-const UsersContainer = connect(mapStateToProps, { follow, unfollow, setUsers,
+export default connect(mapStateToProps, { follow, unfollow, setUsers,
      setCurrentPage, setTotalUsersCount, toggleIsFethcing, 
-     toggleFollowingProgress, getUsers, getUsersOnChangePage })(UsersContainerAPI);
-export default UsersContainer;
+     toggleFollowingProgress, getUsers, getUsersOnChangePage })(AuthRedirectComponent);
