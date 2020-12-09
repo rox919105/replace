@@ -2,7 +2,6 @@ import React from 'react';
 import s from './Dialogs.module.css';
 import Person from './DialogsComponents/Person'
 import Dialog from './DialogsComponents/Dialog'
-import { Redirect } from 'react-router-dom';
 
 
 
